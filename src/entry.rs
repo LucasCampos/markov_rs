@@ -8,7 +8,7 @@ use std::collections::HashMap;
 use rand::{thread_rng, Rng};
 use rand::rngs::{ThreadRng};
 
-const PREFIX_SIZE: usize = 2;
+const PREFIX_SIZE: usize = 5;
 
 #[derive(Clone, Debug, Hash)]
 pub struct Prefix
@@ -26,8 +26,10 @@ impl Prefix {
     }
 
     pub fn push_new(&mut self, word: String) {
-        self.entries[0] = self.entries[1].clone();
-        self.entries[1] = word;
+        for i in 0..PREFIX_SIZE-1 {
+            self.entries[i] = self.entries[i+1].clone();
+        }
+        self.entries[PREFIX_SIZE-1] = word;
     }
 }
 
