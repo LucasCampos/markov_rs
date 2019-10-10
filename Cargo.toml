@@ -1,0 +1,8 @@
+[package]
+name = "markov_rs"
+version = "0.1.0"
+authors = ["lqccampos@gmail.com"]
+edition = "2018"
+
+[dependencies]
+rand = "0.7"
