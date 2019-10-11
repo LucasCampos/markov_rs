@@ -22,8 +22,8 @@ fn main() {
         )
         .get_matches();
 
-    let filename = matches.value_of("file").unwrap_or("juliet.txt");
-    let contents = fs::read_to_string("./juliet.txt").expect("Something went wrong reading the file");
+    let filename = matches.value_of("file").unwrap_or("res/shakespeare_trimmed.txt");
+    let contents = fs::read_to_string(filename).expect("Something went wrong reading the file");
 
     let n_words_str = matches.value_of("words").unwrap_or("100");
     let n_words = n_words_str.parse::<i32>().unwrap();
