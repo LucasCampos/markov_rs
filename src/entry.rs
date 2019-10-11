@@ -8,7 +8,7 @@ use std::collections::HashMap;
 use rand::{thread_rng, Rng};
 use rand::rngs::{ThreadRng};
 
-const PREFIX_SIZE: usize = 5;
+const PREFIX_SIZE: usize = 3;
 
 #[derive(Clone, Debug, Hash)]
 pub struct Prefix
