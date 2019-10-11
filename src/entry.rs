@@ -141,11 +141,6 @@ impl MarkovData {
         //Normalize the followups to each Prefix to be sure they sum to one.
         for fu in data.values_mut() {
 
-            // let total = fu.possibilities.values().fold(0.0, |a, b| a + b);
-
-            // for p in fu.possibilities.values_mut() {
-            //     *p = *p/total;
-            // }
             fu.normalize();
 
         }
