@@ -68,7 +68,7 @@ impl FollowUp{
 
     /// Update the probabilities to be sure they 
     /// sum to one
-    pub fn normalize(mut self) {
+    pub fn normalize(&mut self) {
 
         let total = self.possibilities.values().fold(0.0, |a, b| a + b);
 
@@ -141,11 +141,12 @@ impl MarkovData {
         //Normalize the followups to each Prefix to be sure they sum to one.
         for fu in data.values_mut() {
 
-            let total = fu.possibilities.values().fold(0.0, |a, b| a + b);
+            // let total = fu.possibilities.values().fold(0.0, |a, b| a + b);
 
-            for p in fu.possibilities.values_mut() {
-                *p = *p/total;
-            }
+            // for p in fu.possibilities.values_mut() {
+            //     *p = *p/total;
+            // }
+            fu.normalize();
 
         }
 
